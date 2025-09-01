@@ -59,7 +59,7 @@ const server = http.createServer(async (req, res) => {
           else if(Number(data[1]) === 0){
             res.statusCode = 400;
             res.writeHead(400, {'Content-Type': 'text/plain'});
-            res.end('Division by zero error');
+            res.end('Division by zero');
           }
           else{
             const result = Number(data[0]) / Number(data[1]);
@@ -80,12 +80,13 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(500, {'Content-Type': 'text/plain'});
         res.end('Unable to write result');
       }
-    };
-  } else {
-    res.statusCode = 404;
-    res.writeHead(404, {'Content-Type': 'text/plain'});
-    res.end('Not Found');
-  }
+    }
+    else {
+      res.statusCode = 404;
+      res.writeHead(404, {'Content-Type': 'text/plain'});
+      res.end('Not Found');
+    }
+  } 
 })
 
 // Do not modify this
