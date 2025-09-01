@@ -131,7 +131,7 @@ const server = http.createServer(async (req, res) => {
       } else if (op === 'divide') {
         if (num2 === 0) {
           res.writeHead(400, { 'Content-Type': 'text/plain' });
-          return res.end('Division by zero error');
+          return res.end('Division by zero');
         }
         result = num1 / num2;
       } else {
