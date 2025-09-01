@@ -9,7 +9,7 @@ const server = http.createServer(async (req, res) => {
         const dat = await fs.readFile('../inputs.txt', 'utf-8');
         const data = dat.split('\n');
         if(data[2] === 'add'){
-          if(data[0].isNumber === false || data[1].isNumber === false){
+          if(isNaN(Number(data[0])) || isNaN(Number(data[1]))){
             res.writeHead(400, {'Content-Type': 'text/plain'});
             res.end('Invalid Number');
           }
@@ -21,7 +21,7 @@ const server = http.createServer(async (req, res) => {
           }
         }
         else if(data[2] === 'subtract'){
-          if(data[0].isNumber === false || data[1].isNumber === false){
+          if(isNaN(Number(data[0])) || isNaN(Number(data[1]))){
             res.writeHead(400, {'Content-Type': 'text/plain'});
             res.end('Invalid Number');
           }
@@ -33,7 +33,7 @@ const server = http.createServer(async (req, res) => {
           }
         }
         else if(data[2] === 'multiply'){
-          if(data[0].isNumber === false || data[1].isNumber === false){
+          if(isNaN(Number(data[0])) || isNaN(Number(data[1]))){
             res.writeHead(400, {'Content-Type': 'text/plain'});
             res.end('Invalid Number');
           }
@@ -45,7 +45,7 @@ const server = http.createServer(async (req, res) => {
           }
         }
         else if(data[2] === 'divide'){
-          if(data[0].isNumber === false || data[1].isNumber === false){
+          if(isNaN(Number(data[0])) || isNaN(Number(data[1]))){
             res.writeHead(400, {'Content-Type': 'text/plain'});
             res.end('Invalid Number');
           }
